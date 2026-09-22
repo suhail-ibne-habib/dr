@@ -20,7 +20,7 @@ export const site = {
   },
   tagline: {
     eyebrow: "দেশ ও বিদেশে ১০ বছরের অভিজ্ঞতা",
-    headline: ["মেডিসিন ও", "ডায়াবেটিস", "বিশেষজ্ঞ"],
+    headline: "মেডিসিন ও ডায়াবেটিস বিশেষজ্ঞ",
     body: "সহানুভূতিশীল রোগনির্ণয়, আধুনিক প্রমাণভিত্তিক চিকিৎসা এবং নিয়মিত ফলোআপ — এক ছাদের নিচে।",
   },
   highlights: [
@@ -117,6 +117,11 @@ export const site = {
     whatsappLabel: "হোয়াটসঅ্যাপ",
     writeEmail: "ইমেইল লিখুন",
     contactMethods: "যোগাযোগের মাধ্যম",
+    galleryTitle: "গ্যালারি",
+    galleryBody: "কর্মক্ষেত্র ও সহকর্মীদের সাথে কিছু মুহূর্ত।",
+    closeGallery: "বন্ধ করুন",
+    prevImage: "আগের ছবি",
+    nextImage: "পরের ছবি",
   },
 } as const;
 
@@ -293,5 +298,40 @@ export const chambers = [
     mapHref: "https://maps.google.com/?q=Nurjahan+Shopping+Mall+Bancharampur+Brahmanbaria",
     days: "শুক্রবার ও মঙ্গলবার",
     hours: [{ label: "রোগী দেখা", time: "সকাল ৭:০০ – বিকাল ৫:০০" }],
+  },
+] as const;
+
+export const gallery = [
+  {
+    src: "/gallery/WhatsApp Image 2026-09-16 at 5.20.22 PM.jpeg",
+    alt: "ডাঃ আরিফ মাসুদ চৌধুরী সহকর্মীর সাথে",
+  },
+  {
+    src: "/gallery/WhatsApp Image 2026-09-16 at 5.20.27 PM.jpeg",
+    alt: "ডাঃ আরিফ মাসুদ চৌধুরী সহকর্মীদের সাথে মাঠপর্যায়ে",
+  },
+  {
+    src: "/gallery/WhatsApp Image 2026-09-16 at 5.20.30 PM.jpeg",
+    alt: "ডাঃ আরিফ মাসুদ চৌধুরী চিত্রগ্রহণের সময়",
+  },
+  {
+    src: "/gallery/WhatsApp Image 2026-09-16 at 5.20.32 PM.jpeg",
+    alt: "ডাঃ আরিফ মাসুদ চৌধুরী চেম্বারে সহকর্মীর সাথে",
+  },
+  {
+    src: "/gallery/WhatsApp Image 2026-09-1dfdsf6 at 5.20.24 PM.jpeg",
+    alt: "ডাঃ আরিফ মাসুদ চৌধুরী সহকর্মীদের সাথে বাইরে",
+  },
+  {
+    src: "/gallery/WhatsApp Image 2026-0bhfg9-16 at 5.20.23 PM.jpeg",
+    alt: "ডাঃ আরিফ মাসুদ চৌধুরী সহকর্মীদের সাথে",
+  },
+  {
+    src: "/gallery/WhatsApp Image 202fgd6-09-16 at 5.20.23 PM.jpeg",
+    alt: "ডাঃ আরিফ মাসুদ চৌধুরী সহকর্মীদের সাথে সন্ধ্যায়",
+  },
+  {
+    src: "/gallery/WhatsApp Image 202fgf6-09-16 at 5.20.23 PM.jpeg",
+    alt: "ডাঃ আরিফ মাসুদ চৌধুরী সহকর্মীর সাথে",
   },
 ] as const;

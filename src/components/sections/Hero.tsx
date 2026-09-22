@@ -13,12 +13,8 @@ export function Hero() {
             {site.tagline.eyebrow}
           </p>
 
-          <h1 className="mt-4 text-[clamp(2.4rem,6vw,4.6rem)] font-extrabold leading-[1.15] tracking-tight text-navy">
-            {site.tagline.headline.map((line) => (
-              <span key={line} className="block">
-                {line}
-              </span>
-            ))}
+          <h1 className="mt-4 text-[clamp(2.2rem,5vw,3.6rem)] font-extrabold leading-[1.15] tracking-tight text-navy">
+            মেডিসিন ও <br/>ডায়াবেটিস বিশেষজ্ঞ
           </h1>
 
           <p className="mt-5 max-w-lg text-[15px] leading-8 text-muted">

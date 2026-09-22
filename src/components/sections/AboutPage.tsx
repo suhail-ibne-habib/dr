@@ -8,6 +8,7 @@ import {
   qualifications,
   site,
 } from "@/data/site";
+import { Gallery } from "@/components/sections/Gallery";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/animations/Reveal";
@@ -102,6 +103,8 @@ export function AboutPage() {
           </div>
         </Container>
       </section>
+
+      <Gallery />
 
       <section className="bg-white py-16 sm:py-20">
         <Container className="grid gap-10 lg:grid-cols-2">
