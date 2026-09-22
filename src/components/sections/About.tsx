@@ -1,4 +1,4 @@
-import { MapPin, Phone, ShieldCheck } from "lucide-react";
+import { ArrowRight, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { aboutPoints, site } from "@/data/site";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -61,6 +61,10 @@ export function About() {
 
           <Reveal delay={0.15}>
             <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Button href="/about" variant="ghost">
+                {site.ui.readAbout}
+                <ArrowRight className="size-4" />
+              </Button>
               <Button href={site.contact.phoneHref}>{site.ui.callDoctorNow}</Button>
               <a
                 href={site.contact.phoneHref}

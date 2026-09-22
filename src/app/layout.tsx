@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Hind_Siliguri } from "next/font/google";
+import { Footer } from "@/components/layout/Footer";
+import { Navbar } from "@/components/layout/Navbar";
 import "./globals.css";
 
 const hind = Hind_Siliguri({
@@ -18,7 +20,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="bn" className={`${hind.variable} h-full antialiased`}>
-      <body className="min-h-full bg-white font-sans text-navy">{children}</body>
+      <body className="min-h-full bg-white font-sans text-navy">
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

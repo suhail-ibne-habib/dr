@@ -1,11 +1,11 @@
-import { MapPin, Phone } from "lucide-react";
-import { site } from "@/data/site";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { chambers, site } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/icons/Logo";
 
 export function Footer() {
   return (
-    <footer id="contact" className="scroll-mt-24 bg-navy-deep text-white">
+    <footer className="bg-navy-deep text-white">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Logo inverted />
@@ -27,11 +27,11 @@ export function Footer() {
 
         <div>
           <p className="text-sm font-semibold text-teal">{site.ui.chamberHours}</p>
-          <ul className="mt-4 space-y-2 text-sm text-white/70">
-            {site.chamber.hours.map((row) => (
-              <li key={row.days}>
-                <span className="block font-medium text-white">{row.days}</span>
-                {row.time}
+          <ul className="mt-4 space-y-3 text-sm text-white/70">
+            {chambers.map((item) => (
+              <li key={item.id}>
+                <span className="block font-medium text-white">{item.name}</span>
+                {item.days} · {item.hours.map((row) => row.time).join(" ও ")}
               </li>
             ))}
           </ul>
@@ -47,8 +47,16 @@ export function Footer() {
               </a>
             </li>
             <li className="flex items-start gap-2">
+              <Mail className="mt-0.5 size-4 text-teal" />
+              <a href={site.contact.emailHref} className="hover:text-white">
+                {site.contact.email}
+              </a>
+            </li>
+            <li className="flex items-start gap-2">
               <MapPin className="mt-0.5 size-4 text-teal" />
-              {site.chamber.address}
+              <a href={site.chamber.mapHref} target="_blank" rel="noreferrer" className="hover:text-white">
+                {site.chamber.address}
+              </a>
             </li>
           </ul>
         </div>
@@ -56,7 +64,7 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <Container className="flex flex-col gap-2 py-5 text-xs text-white/45 sm:flex-row sm:justify-between">
-          <p>
+          <p suppressHydrationWarning>
             © {new Date().getFullYear()} {site.doctor.honorific}। {site.ui.copyright}
           </p>
           <p>{site.ui.disclaimer}</p>

@@ -3,7 +3,7 @@ import { site } from "@/data/site";
 
 export function Logo({ className, inverted = false }: { className?: string; inverted?: boolean }) {
   return (
-    <a href="#home" className={cn("flex items-center gap-2.5", className)}>
+    <a href="/" className={cn("flex items-center gap-2.5", className)}>
       <span className="grid size-9 place-items-center rounded-xl bg-teal text-white">
         <svg viewBox="0 0 24 24" className="size-5" fill="none" aria-hidden>
           <path

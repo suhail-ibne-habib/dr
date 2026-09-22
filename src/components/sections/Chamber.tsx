@@ -1,64 +1,57 @@
 import { Clock, MapPin, Phone } from "lucide-react";
-import { bookingSteps, site } from "@/data/site";
+import { bookingSteps, chambers, site } from "@/data/site";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/animations/Reveal";
-import { cn } from "@/lib/cn";
 
-export function Chamber() {
+export function Chamber({ showHeader = true }: { showHeader?: boolean }) {
   return (
-    <section id="chamber" className="scroll-mt-24 bg-mist/70 py-16 sm:py-20">
+    <section className="scroll-mt-24 bg-mist/70 py-16 sm:py-20">
       <Container>
-        <Reveal>
-          <div className="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-            <h2 className="text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
-              {site.ui.chamberTitle}
-            </h2>
-            <p className="mt-3 text-[15px] leading-8 text-muted">{site.ui.chamberBody}</p>
-          </div>
-        </Reveal>
+        {showHeader ? (
+          <Reveal>
+            <div className="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
+              <h2 className="text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
+                {site.ui.chamberTitle}
+              </h2>
+              <p className="mt-3 text-[15px] leading-8 text-muted">{site.ui.chamberBody}</p>
+            </div>
+          </Reveal>
+        ) : null}
 
         <div className="grid gap-5 lg:grid-cols-2">
-          <Reveal>
-            <article className="h-full rounded-[28px] border border-white bg-white/85 p-6 shadow-[0_12px_40px_rgba(11,31,51,0.05)] backdrop-blur-md sm:p-8">
-              <p className="text-sm font-semibold text-teal-dark">{site.chamber.name}</p>
-              <h3 className="mt-2 text-2xl font-extrabold text-navy">{site.ui.eveningHours}</h3>
-              <p className="mt-3 flex items-start gap-2 text-[15px] leading-7 text-muted">
-                <MapPin className="mt-1 size-4 shrink-0 text-teal" />
-                {site.chamber.address}
-              </p>
-
-              <ul className="mt-6 space-y-3">
-                {site.chamber.hours.map((row) => (
-                  <li
-                    key={row.days}
-                    className="flex items-center justify-between gap-3 rounded-2xl bg-mist px-4 py-3"
-                  >
-                    <span className="flex items-center gap-2 font-semibold text-navy">
-                      <Clock className="size-4 text-teal" />
-                      {row.days}
-                    </span>
-                    <span
-                      className={cn(
-                        "shrink-0 rounded-full px-3 py-1 text-xs font-semibold",
-                        row.tone === "open"
-                          ? "bg-teal/15 text-teal-dark"
-                          : "bg-rose-100 text-rose-600",
-                      )}
-                    >
-                      {row.time}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              <p className="mt-5 text-sm leading-7 text-muted">{site.chamber.note}</p>
-              <Button href={site.contact.phoneHref} variant="ghost" className="mt-6">
-                <Phone className="size-4" />
-                {site.contact.phone}
-              </Button>
-            </article>
-          </Reveal>
+          <div className="space-y-5">
+            {chambers.map((item, index) => (
+              <Reveal key={item.id} delay={index * 0.05}>
+                <article className="rounded-[28px] border border-white bg-white/85 p-6 shadow-[0_12px_40px_rgba(11,31,51,0.05)] backdrop-blur-md sm:p-7">
+                  <p className="text-sm font-semibold text-teal-dark">{item.area}</p>
+                  <h3 className="mt-1 text-xl font-extrabold text-navy">{item.name}</h3>
+                  <p className="mt-3 flex items-start gap-2 text-[15px] leading-7 text-muted">
+                    <MapPin className="mt-1 size-4 shrink-0 text-teal" />
+                    <a href={item.mapHref} target="_blank" rel="noreferrer" className="hover:text-navy">
+                      {item.address}
+                    </a>
+                  </p>
+                  <ul className="mt-4 space-y-2">
+                    {item.hours.map((row) => (
+                      <li
+                        key={`${item.id}-${row.label}`}
+                        className="flex items-center justify-between gap-3 rounded-2xl bg-mist px-4 py-3"
+                      >
+                        <span className="flex items-center gap-2 font-semibold text-navy">
+                          <Clock className="size-4 text-teal" />
+                          {item.days} · {row.label}
+                        </span>
+                        <span className="shrink-0 rounded-full bg-teal/15 px-3 py-1 text-xs font-semibold text-teal-dark">
+                          {row.time}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              </Reveal>
+            ))}
+          </div>
 
           <Reveal delay={0.08}>
             <article className="h-full rounded-[28px] border border-white bg-white/85 p-6 shadow-[0_12px_40px_rgba(11,31,51,0.05)] backdrop-blur-md sm:p-8">
@@ -75,6 +68,8 @@ export function Chamber() {
                 </a>
                 <a
                   href={site.contact.phoneSecondaryHref}
+                  target="_blank"
+                  rel="noreferrer"
                   className="rounded-2xl bg-mist p-4 transition-colors hover:bg-mint"
                 >
                   <p className="text-xs text-muted">{site.ui.serialDesk}</p>
@@ -96,7 +91,9 @@ export function Chamber() {
                 ))}
               </ol>
 
+              <p className="mt-6 text-sm leading-7 text-muted">{site.chamber.note}</p>
               <Button href={site.contact.phoneHref} className="mt-8">
+                <Phone className="size-4" />
                 {site.ui.getSerial}
               </Button>
             </article>

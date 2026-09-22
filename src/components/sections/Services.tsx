@@ -6,14 +6,6 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/animations/Reveal";
 import { cn } from "@/lib/cn";
 
-const icons = {
-  droplet: Droplets,
-  stethoscope: Stethoscope,
-  activity: Activity,
-  bandage: BandageIcon,
-  heart: HeartPulse,
-};
-
 function BandageIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} fill="none" aria-hidden>
@@ -32,6 +24,14 @@ function BandageIcon({ className }: { className?: string }) {
   );
 }
 
+const icons = {
+  droplet: Droplets,
+  stethoscope: Stethoscope,
+  activity: Activity,
+  bandage: BandageIcon,
+  heart: HeartPulse,
+};
+
 const tints = {
   teal: "bg-mint text-teal-dark",
   sky: "bg-sky text-[#0369a1]",
@@ -39,23 +39,25 @@ const tints = {
   green: "bg-green text-[#059669]",
 };
 
-export function Services() {
+export function Services({ showHeader = true }: { showHeader?: boolean }) {
   return (
-    <section id="services" className="scroll-mt-24 bg-mist/60 py-16 sm:py-20">
+    <section className="scroll-mt-24 bg-mist/60 py-16 sm:py-20">
       <Container>
-        <div className="mb-10 flex flex-col gap-4 lg:mb-12 lg:flex-row lg:items-end lg:justify-between">
-          <Reveal>
-            <div>
-              <p className="text-sm font-semibold text-teal-dark">{site.ui.specialties}</p>
-              <h2 className="mt-3 max-w-md text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
-                {site.ui.servicesTitle}
-              </h2>
-            </div>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <p className="max-w-md text-[15px] leading-8 text-muted">{site.ui.servicesBody}</p>
-          </Reveal>
-        </div>
+        {showHeader ? (
+          <div className="mb-10 flex flex-col gap-4 lg:mb-12 lg:flex-row lg:items-end lg:justify-between">
+            <Reveal>
+              <div>
+                <p className="text-sm font-semibold text-teal-dark">{site.ui.specialties}</p>
+                <h2 className="mt-3 max-w-md text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
+                  {site.ui.servicesTitle}
+                </h2>
+              </div>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <p className="max-w-md text-[15px] leading-8 text-muted">{site.ui.servicesBody}</p>
+            </Reveal>
+          </div>
+        ) : null}
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {services.map((service, index) => {
@@ -78,7 +80,7 @@ export function Services() {
                     {service.description}
                   </p>
                   <a
-                    href="#chamber"
+                    href="/chamber"
                     className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-teal-dark"
                   >
                     {site.ui.learnMore}
@@ -89,6 +91,17 @@ export function Services() {
             );
           })}
         </div>
+        {showHeader ? (
+          <div className="mt-10 text-center">
+            <a
+              href="/services"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-teal-dark"
+            >
+              {site.ui.seeAllServices}
+              <ArrowRight className="size-3.5" />
+            </a>
+          </div>
+        ) : null}
       </Container>
     </section>
   );

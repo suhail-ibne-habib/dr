@@ -33,7 +33,7 @@ export function Hero() {
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
-            <Button href="#chamber" variant="ghost" size="lg">
+            <Button href="/chamber" variant="ghost" size="lg">
               {site.ui.viewHours}
             </Button>
             <Button href={site.contact.phoneHref} variant="primary" size="lg">

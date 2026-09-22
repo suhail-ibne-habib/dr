@@ -19,11 +19,14 @@ export function Reveal({ children, className, delay = 0 }: RevealProps) {
       if (!el) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.92) return;
+
       gsap.from(el, {
         y: 24,
         duration: 0.7,
         delay,
         ease: "power3.out",
+        immediateRender: false,
         clearProps: "transform",
         scrollTrigger: {
           trigger: el,
