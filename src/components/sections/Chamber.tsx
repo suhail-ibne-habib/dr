@@ -67,13 +67,11 @@ export function Chamber({ showHeader = true }: { showHeader?: boolean }) {
                   <p className="mt-1 font-bold text-navy">{site.contact.phone}</p>
                 </a>
                 <a
-                  href={site.contact.phoneSecondaryHref}
-                  target="_blank"
-                  rel="noreferrer"
+                  href={site.contact.emailHref}
                   className="rounded-2xl bg-mist p-4 transition-colors hover:bg-mint"
                 >
-                  <p className="text-xs text-muted">{site.ui.serialDesk}</p>
-                  <p className="mt-1 font-bold text-navy">{site.contact.phoneSecondary}</p>
+                  <p className="text-xs text-muted">{site.ui.emailLabel}</p>
+                  <p className="mt-1 break-all font-bold text-navy">{site.contact.email}</p>
                 </a>
               </div>
 

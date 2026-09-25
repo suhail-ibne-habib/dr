@@ -68,7 +68,7 @@ export function About() {
               <Button href={site.contact.phoneHref}>{site.ui.callDoctorNow}</Button>
               <a
                 href={site.contact.phoneHref}
-                className="inline-flex items-center gap-2 text-sm font-medium text-navy"
+                className="inline-flex items-center gap-2 text-sm font-medium tabular-nums tracking-wide text-navy"
               >
                 <Phone className="size-4 text-teal" />
                 {site.contact.phone}

@@ -42,7 +42,7 @@ export function Footer() {
           <ul className="mt-4 space-y-3 text-sm text-white/70">
             <li className="flex items-start gap-2">
               <Phone className="mt-0.5 size-4 text-teal" />
-              <a href={site.contact.phoneHref} className="hover:text-white">
+              <a href={site.contact.phoneHref} className="tabular-nums tracking-wide hover:text-white">
                 {site.contact.phone}
               </a>
             </li>

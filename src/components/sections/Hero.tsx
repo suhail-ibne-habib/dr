@@ -70,7 +70,10 @@ export function Hero() {
 
             <div className="glass absolute bottom-4 left-4 right-4 rounded-2xl px-4 py-3">
               <p className="text-sm font-semibold text-navy">{site.ui.callAnytime}</p>
-              <a href={site.contact.phoneHref} className="text-sm text-teal-dark">
+              <a
+                href={site.contact.phoneHref}
+                className="mt-0.5 block text-lg font-extrabold tracking-wide text-teal-dark tabular-nums"
+              >
                 {site.contact.phone}
               </a>
             </div>

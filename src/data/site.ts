@@ -29,13 +29,13 @@ export const site = {
     "ডাক্তারের সাথে সরাসরি যোগাযোগ",
   ],
   contact: {
-    phone: "০১৮১৯-৬৯১৮১৬",
+    phone: "01819-691816",
     phoneHref: "tel:+8801819691816",
-    phoneSecondary: "০১৮১৯-৬৯১৮১৬",
+    phoneSecondary: "01819-691816",
     phoneSecondaryHref: "https://wa.me/8801819691816",
     whatsapp: "https://wa.me/8801819691816",
-    email: "arifmasud@gmail.com",
-    emailHref: "mailto:arifmasud@gmail.com",
+    email: "jewelchaudhary@gmail.com",
+    emailHref: "mailto:jewelchaudhary@gmail.com",
   },
   hospital: {
     name: "সেনাহিয়া মিলিটারি হাসপাতাল",

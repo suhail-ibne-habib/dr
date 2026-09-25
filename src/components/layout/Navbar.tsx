@@ -39,7 +39,7 @@ export function Navbar() {
           <span className="hidden sm:inline-flex">
             <Button href={site.contact.phoneHref} size="sm">
               <Phone className="size-3.5" />
-              {site.ui.callDoctor}
+              <span className="tabular-nums tracking-wide">{site.contact.phone}</span>
             </Button>
           </span>
           <button

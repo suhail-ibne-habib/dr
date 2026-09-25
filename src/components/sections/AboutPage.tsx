@@ -185,7 +185,7 @@ export function AboutPage() {
                 <p className="text-sm text-teal">{site.ui.directBooking}</p>
                 <p className="mt-1 text-lg font-extrabold">{site.ui.callAnytime}</p>
               </div>
-              <a href={site.contact.phoneHref} className="inline-flex items-center gap-2 text-sm">
+              <a href={site.contact.phoneHref} className="inline-flex items-center gap-2 text-sm tabular-nums tracking-wide">
                 <Phone className="size-4 text-teal" />
                 {site.contact.phone}
               </a>
