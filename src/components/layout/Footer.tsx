@@ -65,11 +65,13 @@ export function Footer() {
       <div className="border-t border-white/10">
         <Container className="flex flex-col gap-2 py-5 text-xs text-white/45 sm:flex-row sm:justify-between">
           <p suppressHydrationWarning>
-            © {new Date().getFullYear()} {site.doctor.honorific}। {site.ui.copyright}
+            © {new Date().getFullYear()} {site.doctor.honorific} । <span className="text-white/45 text-xs">Powered by <a href="https://www.eracodex.io/" target="_blank" rel="noreferrer" className="hover:text-white">Eracodex</a></span>
           </p>
           <p>{site.ui.disclaimer}</p>
         </Container>
       </div>
+
+      
     </footer>
   );
 }
